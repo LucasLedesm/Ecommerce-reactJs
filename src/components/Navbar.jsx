@@ -2,6 +2,7 @@ import React from 'react';
 import CartWidget from './CartWidget';
 
 function Navbar() {
+  
   return <div >
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -12,26 +13,31 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Home</a>
+              <a className="nav-link active" aria-current="page" href="#">Comprar</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Link</a>
+              <a className="nav-link" href="#">Vender</a>
             </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
+                Categorias
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a className="dropdown-item" href="#">Action</a></li>
-                <li><a className="dropdown-item" href="#">Another action</a></li>
-                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                <li><a className="dropdown-item" href="#">article1</a></li>
+                <li><a className="dropdown-item" href="#">article2</a></li>
+                <li><a className="dropdown-item" href="#">article3</a></li>
+                <li><a className="dropdown-item" href="#">article4</a></li>
+                <li><a className="dropdown-item" href="#">article5</a></li>
+                <li><a className="dropdown-item" href="#">article6</a></li>
+                <li><a className="dropdown-item" href="#">article7</a></li>
+                <li><a className="dropdown-item" href="#">article8</a></li>
+                
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
+              <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
             </li>
           </ul>
-          <CartWidget />
         </div>
       </div>
     </nav>

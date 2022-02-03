@@ -1,7 +1,7 @@
 import React from 'react';
-
+let carrito =  <i className="bi bi-cart2" role="img" aria-label="cart"></i>
 const CartWidget = () => {
-    return <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAACA0lEQVRYR+2X7VXCMBSGe1P4jxvABOIGOIEwgXUDmECdAJwANgAnkA1kA7uB/U/b+KYE7HeaNHD4Qc8pp9D03oc396vkXNlBV8bj3IBUO5JRiEfRW+YBxjZEtFMZsXk/CxTHvGCcaAWoF5tO62ypgcTTcTyhTmdzCajqLWPs3uF8LCF2xNjDxYHSDjnnPQD9nn4jGmDr/HND1aY9oJaA8hKIC8WSCmgIoG+pSoDrD9sKketmMltZGHkc/wCibxskZS8Tn2qgMPQcxpZnBPKRMIOjfTVQPrhtkxEtkCyzxkBiIYJ7jo+pbZbEXhQ9Ure71QXKlgB7ZIX6ptyyo28E9xeuR/ZYEunftbPsBHSO4C4pto0VSmLJZgkgEpPEJK+4HpAYT4herWxbRcPWA7JXAgL8MdEbg1YKyRLw399MpcrVnrQZLYUkULq/mSHlak8rIAvBXTtbaSuUAIXhGP1tbSRPSe1prZCE8hCYfS0ozn2Mwqu6Z4wU0oLQXGwMlLwyET3h9OFzVjXeojEPcf8ZbWKE8zPfKlqnfWmmVVRduXadelkQo3DtbG6kUElQBxiy7sp2B+1GjMBCpcPB+QwqLap20gzoULHFaNuTTgpd++Q/iqZQZS6/V1bo43ojoIwzxraq122+34+SjHRd0VAL7cJK2msmT+PlrRRq7EVj4Q1IJdYf37LWJTerAxkAAAAASUVORK5CYII="/>
+    return <div>{carrito}</div> 
 };
 
 export default CartWidget;
