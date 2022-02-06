@@ -11,7 +11,7 @@ const CardCart = () => {
                     <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, minima.</p>
                     <div className="d-flex justify-content-center align-items-center">
                         <div className="btn-group">
-                            <ItemCount />
+                            <ItemCount stock={5} initial={1} />
                         </div>
                     </div>
                 </div>
