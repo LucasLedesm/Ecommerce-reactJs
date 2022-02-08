@@ -40,6 +40,7 @@ function Navbar() {
           </ul>
         </div>
       </div>
+      <button className='btn btn-danger px-4 mx-4'><CartWidget /></button>
     </nav>
   </div>;
 }
