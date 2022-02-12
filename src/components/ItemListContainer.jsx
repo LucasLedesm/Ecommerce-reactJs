@@ -1,17 +1,17 @@
 import React from 'react';
-import CardCart from './CardCart';
+import Item from "./Item";
 
 const ItemListContainer = () => {
     return <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <CardCart/>
-        <CardCart/>
-        <CardCart/>
-        <CardCart/>
-        <CardCart/>
-        <CardCart/>
-        <CardCart/>
-        <CardCart/>
-        <CardCart/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
     </div>
 };
 
