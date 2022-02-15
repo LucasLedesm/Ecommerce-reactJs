@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import ItemList from "./ItemList"
+import ItemList from './ItemList';
 
 
 
-const productosJson = [
+const productos = [
     {
         id: 1,
         title: "rouser ns200",
@@ -42,11 +42,17 @@ const productosJson = [
 ]
 
 const ItemListContainer = () => {
-    const [ItemList, setItemList] = useState([])
+
+
+
+    
+    const [ListadoProductos, setListadoProductos] = useState([])
+
+
     const prodPromise = new Promise((resolve, reject) => {
         setTimeout(() => {
-            setItemList(productosJson)
-            ItemList ? resolve(ItemList) : reject("no se completo")
+            setListadoProductos(productos)
+            ListadoProductos ? resolve(ItemList) : reject("no se completo")
         }, 2000);
     })
 
@@ -55,8 +61,8 @@ const ItemListContainer = () => {
         .then(console.log)
         .catch(console.warn)
     return <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <ItemList ItemList={ItemList} />
-
+        
+      <ItemList/>
     </div>
 };
 
@@ -75,3 +81,4 @@ const ItemListContainer = () => {
 //     .catch(console.warn)
 
 export default ItemListContainer;
+
