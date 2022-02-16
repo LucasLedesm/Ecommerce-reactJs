@@ -1,6 +1,7 @@
 import React from 'react'
 import ItemCount from './ItemCount';
 
+
 const Item = ({id,title,stock,img,price}) => {
   return (
     <div className="container">
@@ -9,7 +10,7 @@ const Item = ({id,title,stock,img,price}) => {
                 <h1>{title}</h1>
                 <img src={img} alt="ilustracion"  /> 
                 <div className="card-body">
-                    <p className="card-text">description</p>
+                    <p className="card-text">   description</p>
                     <div className="d-flex justify-content-center align-items-center">
                         <div className="btn-group">
                             <ItemCount stock={stock} initial={1} />
@@ -17,7 +18,7 @@ const Item = ({id,title,stock,img,price}) => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className='row'>
                 <h3>${price} Stock:{stock}</h3>
             </div>
         </div>
@@ -25,5 +26,5 @@ const Item = ({id,title,stock,img,price}) => {
   )
   
 }
-
+console.log(Item);
 export default Item
