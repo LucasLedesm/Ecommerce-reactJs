@@ -1,6 +1,4 @@
 import React from 'react';
-import ItemListContainer from './ItemListContainer';
-
 const productos = [
     {
         id: 1,
@@ -38,12 +36,12 @@ const productos = [
         price: 1232000
     },
 ]
-
-const ItemList = ({productos}) => {
+const ItemList = () => {
     return (
+        
         <>
-            {productos.map((item) => (
-                <item key={item.id} id={item.id} title={item.title} stock={item.stock} img={item.img} price={item.price} />))}
+            {productos.map((Item) => (
+                <item key={Item.id} id={Item.id} title={Item.title} stock={Item.stock} img={Item.img} price={Item.price} />))}
         </>
     )
 };
