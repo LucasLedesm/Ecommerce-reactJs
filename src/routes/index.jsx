@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemListContainer from "../components/ItemListContainer"
 import ItemDetailContainer from '../components/ItemDetailContainer'
 import Navbar from '../components/Navbar'
-import Cart from '../components/Cart'
+
 
 const Rutas = () => {
     return (
@@ -12,8 +12,8 @@ const Rutas = () => {
             <Navbar />
             <Routes>
                 <Route path='/' element={<ItemListContainer />} />
-                <Route path='/e' element={<ItemDetailContainer />} />
-                <Route path="/Cart" element ={<Cart/>}/>
+                <Route path='/caregory/:id' element={<ItemDetailContainer />} />
+                <Route path="/Item/:id" element ={<ItemDetailContainer/>}/>
             </Routes>
         </BrowserRouter>
     )

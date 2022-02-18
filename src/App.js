@@ -1,4 +1,3 @@
-import Navbar from './components/Navbar.jsx';
 import Rutas from './routes';
 
 

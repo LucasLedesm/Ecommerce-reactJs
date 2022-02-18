@@ -5,7 +5,7 @@ const ItemList = ({elements}) => {
         
         <>
             {elements.map((UnProducto) => (
-                <Item key = {UnProducto.id} id={UnProducto.id} brand={UnProducto.brand} model={UnProducto.model} description={UnProducto.description} stock={UnProducto.stock} pictureUrl={UnProducto.pictureUrl} price={UnProducto.price} />))}
+                <Item key = {UnProducto.id} id={UnProducto.id} item={UnProducto.item} idCategory={UnProducto.idCategory} description={UnProducto.description} stock={UnProducto.stock} pictureUrl={UnProducto.pictureUrl} price={UnProducto.price} />))}
         </>
     )
 };
