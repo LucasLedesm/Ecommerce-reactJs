@@ -4,8 +4,8 @@ const ItemList = ({productos}) => {
     return (
         
         <>
-            {productos.map(() => (
-                <Item key = {Item.id} id={Item.id} title={Item.title} stock={Item.stock} img={Item.img} price={Item.price} />))}
+            {productos.map((UnProducto) => (
+                <Item key = {UnProducto.id} id={UnProducto.id} title={UnProducto.title} stock={UnProducto.stock} img={UnProducto.img} price={UnProducto.price} />))}
         </>
     )
 };
