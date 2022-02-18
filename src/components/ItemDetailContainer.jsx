@@ -1,5 +1,6 @@
 import React, {useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
+
 const {elements} = require("./producto");
 const ItemDetailContainer = () => {
     const [dato,setDato]=useState({});

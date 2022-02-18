@@ -1,12 +1,12 @@
 import React from 'react';
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
-  
   return <div >
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">Ecommerce</a>
+        <Link to={"/"} className="navbar-brand" >Ecommerce</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -40,7 +40,7 @@ function Navbar() {
           </ul>
         </div>
       </div>
-      <button className='btn btn-danger px-4 mx-4'><CartWidget /></button>
+      <Link to={"/Cart"} className='btn btn-danger px-4 mx-4'><CartWidget /></Link>
     </nav>
   </div>;
 }
