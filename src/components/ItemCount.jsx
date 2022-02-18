@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const ItemCount = ({ stock, initial }) => {
     const [contador, setcontador] = useState(initial);
 

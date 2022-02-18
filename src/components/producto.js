@@ -3,7 +3,7 @@ const elements=[
         id:1 ,
         idCategory:1,
         brand:"Yamaha" ,
-        model:"r1",
+        model:"R1",
         pictureUrl:"https://images.pexels.com/photos/39693/motorcycle-racer-racing-race-speed-39693.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" ,
         description:"La Yamaha YZF-R1 es una motocicleta super deportiva de la marca Yamaha Motor Company. La R1 tiene como procedencia la Yamaha YZF1000R.",
         price:"22500",

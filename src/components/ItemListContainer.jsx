@@ -21,7 +21,7 @@ const {elements} = require("./producto");
     prodPromise
         .then(console.log)
         .catch(console.warn)
-    return <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    return <div className="row row-cols-3 d-flex align-content-stretch g-3">
         
       <ItemList elements={ListadoProductos} />
     </div>
