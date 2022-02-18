@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ItemList from './ItemList';
+// import axios from 'axios';
 
 
 
@@ -41,8 +42,17 @@ const productos = [
     },
 ]
 
-const ItemListContainer = () => {
+ const ItemListContainer = () => {
 
+//     const getData = async () => {
+//         try {
+//             const response = await axios.get("https://api.mercadolibre.com/categories/MLA1743");
+//             console.log(response)
+//         } catch (error) {
+//             console.log(error)
+//         }
+//     }
+// getData()
 
 
     
@@ -65,7 +75,7 @@ const ItemListContainer = () => {
         
       <ItemList productos={ListadoProductos} />
     </div>
-};
+ };
 
 export default ItemListContainer;
 
