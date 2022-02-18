@@ -2,16 +2,17 @@ import React from 'react'
 import ItemCount from './ItemCount';
 
 
-const Item = ({ id, title, stock, img, price }) => {
+const Item = ({ id, brand, model, stock, description, pictureUrl, price }) => {
     return (
         <div className="container">
             <div className="col">
                 <div className="card shadow-sm">
-                    <h1>{title}</h1>
-                    <img src={img} alt="ilustracion" />
+                    <h1>{brand}</h1>
+                    <h5>{model}</h5> 
+                    <img src={pictureUrl} alt="ilustracion" />
                     <div className="card-body">
                         <h3>${price}</h3>
-                        <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, sed deserunt exercitationem illum distinctio hic qui optio debitis ea magni voluptates eaque earum numquam iusto veniam modi mollitia commodi iste voluptatum, deleniti autem dolorum harum eos nam. Cupiditate nulla error minus optio?</p>
+                        <p className="card-text">{description}</p>
                         <div className="d-flex justify-content-center align-items-center">
                             <div className="btn-group">
                                 <ItemCount stock={stock} initial={1} />
