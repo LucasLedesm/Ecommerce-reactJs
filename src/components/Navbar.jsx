@@ -23,10 +23,10 @@ function Navbar() {
                 Items
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a className="dropdown-item" href="#">Swords</a></li>
-                <li><a className="dropdown-item" href="#">Axes</a></li>
-                <li><a className="dropdown-item" href="#">Maces</a></li>
-                <li><a className="dropdown-item" href="#">Spears</a></li>
+                <li> <Link to={"/Item/Swords"} className="dropdown-item">Swords </Link> </li>
+                <li> <Link to={"/Item/Axes"} className="dropdown-item" >Axes </Link> </li>
+                <li> <Link to={"/Item/Maces"} className="dropdown-item" >Maces </Link> </li>
+                <li> <Link to={"/Item/Spears"} className="dropdown-item">Spears </Link> </li>
               </ul>
             </li>
             <li className="nav-item">
