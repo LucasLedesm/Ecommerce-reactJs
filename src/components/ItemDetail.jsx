@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ItemCount from "./ItemCount"
 const ItemDetail = ({item}) => {
     return(
         <>
@@ -13,6 +13,7 @@ const ItemDetail = ({item}) => {
                         <h3>${item.price}</h3>
                         <p style={{height: '100px' }} className="card-text"><strong>Equipable para:</strong>  {item.description}</p>
                         <div className="d-flex justify-content-center align-items-center">
+                            <ItemCount stock={item.stock} initial={1}/>
                         </div>
                     </div>
                 </div>

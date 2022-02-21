@@ -12,12 +12,8 @@ const Rutas = () => {
             <Navbar />
             <Routes>
                 <Route path='/' element={<ItemListContainer />} />
-                <Route path='/caregory/:id' element={<ItemDetailContainer />} />
-                <Route path="/Item/:id" element ={<ItemDetailContainer/>}/>
-                <Route path='/Item/Swords' element={<ItemListContainer />}/>
-                <Route path='/Item/Axes' element={<ItemListContainer />}/>
-                <Route path='/Item/Maces' element={<ItemListContainer />}/>
-                <Route path='/Item/Spears' element={<ItemListContainer />}/>
+                <Route path='/item/:idItem' element={<ItemDetailContainer/>}/>
+                <Route path="/category/:idCategory" element={<ItemListContainer />}/>
             </Routes>
         </BrowserRouter>
     )

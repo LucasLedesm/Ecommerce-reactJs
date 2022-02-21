@@ -1,25 +1,28 @@
-import React, {useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
+import { useParams } from 'react-router-dom';
 
-const {elements} = require("./producto");
-const ItemDetailContainer = () => {
-    const [dato,setDato]=useState({});
+const { elements } = require("./producto");
 
-    const customFetch=(elements,timeout)=>new Promise((res)=>
-          setTimeout(()=>{
-               res(elements)
-          },timeout)
-    );
-
-    useEffect(()=>{
-        customFetch(elements[1],2000)
-        .then(result=>setDato(result))
-        .catch(error=>console.log(error))
-        
-    },[]);
-
-    return(
-     <ItemDetail item={dato}/>   
-    );
-}
+const ItemDetailContainer =()=>{
+    const [item,setItem]=useState({});
+    const {idItem}=useParams();
+    console.log(idItem);
+    const customFetch=(elements,timeout)=>{
+        return new Promise((res)=>
+              setTimeout(()=>{
+                   res(elements)
+              },timeout)
+        );
+    }
+        useEffect(()=>{
+                customFetch(elements.find(item=>item.id===parseInt(idItem)),2000)
+                .then(result=>setItem(result))
+                .catch(error=>console.log(error))
+        },[idItem]);
+    
+        return(
+         <ItemDetail item={item}/>
+        );
+    }
 export default ItemDetailContainer;
