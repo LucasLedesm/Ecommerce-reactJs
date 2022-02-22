@@ -5,7 +5,7 @@ const {elements} = require("./producto");
 
 
 const ItemListContainer =()=>{
-    //TODO:Filtro productos por categoria
+    
         const [items,setItems]=useState([]);
         const {idCategory}=useParams();
         const customFetch=(elements,timeout)=>{

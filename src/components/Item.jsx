@@ -16,7 +16,6 @@ const Item = (props) => {
                         <div className="d-flex justify-content-center align-items-center">
                             <div className="btn-group">
                                 <Link to={`/item/${props.id}`} className='btn btn-primary'>Ver Detalles</Link>
-                                {/* <ItemCount stock={stock} initial={1} /> */}
                             </div>
                         </div>
                     </div>
