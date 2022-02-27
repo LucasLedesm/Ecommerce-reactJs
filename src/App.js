@@ -1,10 +1,13 @@
+import CarritoProvedor from './context/CarritoProvedor';
 import Rutas from './routes';
 
 
 function App() {
   return (
     <div className="container">
-      <Rutas />
+         <CarritoProvedor>
+        <Rutas />
+      </CarritoProvedor>    
     </div>
   );
 }

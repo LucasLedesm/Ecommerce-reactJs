@@ -7,7 +7,6 @@ const { elements } = require("./producto");
 const ItemDetailContainer =()=>{
     const [item,setItem]=useState({});
     const {idItem}=useParams();
-    console.log(idItem);
     const customFetch=(elements,timeout)=>{
         return new Promise((res)=>
               setTimeout(()=>{

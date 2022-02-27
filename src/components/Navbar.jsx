@@ -35,7 +35,7 @@ function Navbar() {
           </ul>
         </div>
       </div>
-      <Link to={"/Cart"} className='btn btn-danger px-4 mx-4'><CartWidget /></Link>
+      <Link to={"/Cart"} ><CartWidget /></Link>
     </nav>
   </div>;
 }

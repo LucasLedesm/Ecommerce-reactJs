@@ -1,51 +1,45 @@
-import React from 'react'
+import { useContext } from 'react';
+import { CarritoContext } from '../context/CarritoProvedor';
+
+
+
 
 const Cart = () => {
+  const { removeItem } = useContext(CarritoContext);
+  const carrito = useContext(CarritoContext);
+  console.log(carrito.cartList);
+
+
+
   return (
-    <div className='container  mt-4 rounded ' style={{ width: 300 }}>
-      <div className='row'>
-        <h4 className="d-flex justify-content-between align-items-center mb-3">
-          <span className="text-primary">Your cart</span>
-          <span className="badge bg-primary rounded-pill">3</span>
-        </h4>
-        <ul className="list-group mb-3">
-          <li className="list-group-item d-flex justify-content-between lh-sm ml-3">
-            <div>
-              <h6 className="my-0">Product name</h6>
-              <small className="text-muted">Brief description</small>
+    
+    <div classNameName="container d-flex">
+      <div classNameName="col-md-6">
+        <h3 className='text-white'>Carrito</h3>
+        {
+          carrito.cartList.map(item => (
+            <div className="card text-white bg-dark border-info mb-3" style={{ maxwidth: '540px'}}>
+              <div className="row g-0">
+                <div className="col-md-2 ">
+                  <img src={item.pictureUrl}  alt="ilustracion" style={{ width: '150px', height: '150px' }}></img>
+                </div>
+                <div className="col-md-4">
+                  <div className="card-body">
+                    <h5 className="card-title">{item.name}</h5>
+                    <p className="card-text">{item.description}</p>
+                    <p className="card-text"><small className="text-muted">{item.cantidad} X ${item.price}</small></p>
+                    <button className="btn btn-light" type="button" onClick={() => removeItem(item.id)}>Eliminar</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <span className="text-muted">$12</span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 className="my-0">Second product</h6>
-              <small className="text-muted">Brief description</small>
-            </div>
-            <span className="text-muted">$8</span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 className="my-0">Third item</h6>
-              <small className="text-muted">Brief description</small>
-            </div>
-          </li>
-          <li className="list-group-item d-flex justify-content-between bg-light">
-          </li>
-          <li className="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
-            <strong>$20</strong>
-          </li>
-        </ul>
-        <div className='row'>
-            <button style={{ width: 70 }} type="submit" className="btn btn-success">Pagar</button>
-        </div>
-          
-         
+          )
+          )
+        }
+        <button className="btn btn-light" type="button" onClick={carrito.clear}>Vaciar</button>
       </div>
-      
-      
     </div>
-  )
+  );
 }
 
-export default Cart
+export default Cart;

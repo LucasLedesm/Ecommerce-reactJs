@@ -1,9 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
-let carrito =  <i className="bi bi-cart2" role="img" aria-label="cart"></i>
+const carritoImg = <i className="bi bi-cart2" role="img" aria-label="cart"></i>
+
+
 const CartWidget = () => {
-    return <div>{carrito}</div> 
+
+
+    return <>
+        <Link to={"/cart"} className="btn btn-danger px-4 mx-4" >
+            {carritoImg}
+        </Link>
+    </>
 };
 
 export default CartWidget;

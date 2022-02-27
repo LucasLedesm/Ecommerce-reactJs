@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
 
 
 const ItemCount = ({ stock, initial, onAdd }) => {
@@ -19,6 +20,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         setcontador(contador - n)
     }
 
+    useEffect(()=>{
+        },[contador]);
+
     return <div className='container border border-2 rounded-3'>
         <div className='row'>
             <label>Stock:{stock}</label>
@@ -29,8 +33,8 @@ const ItemCount = ({ stock, initial, onAdd }) => {
             </div>
             {
                 stock && contador
-                    ? <button className="btn btn-primary" type="button" onClick={() => onAdd(contador)}>ADD TO CART</button>
-                    : <button className="btn btn-primary" type="button" disabled>ADD TO CART</button>
+                    ? <button className="btn btn-light" type="button" onClick={() => onAdd(contador)}>ADD TO CART</button>
+                    : <button className="btn btn-light" type="button" disabled>ADD TO CART</button>
             }
         </div>
     </div>;
