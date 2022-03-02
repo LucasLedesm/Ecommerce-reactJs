@@ -6,39 +6,42 @@ export const CarritoContext = createContext();
 
 const CarritoProvedor=({children})=>{
   const [cartList,setCartList]=useState([]);
-  
+  const [totalI,setTotalI]=useState(0);
+
   const addToCart=(item,cantidad)=>{
-      
+    let encontrado =cartList.find(elem=>elem.id===item.id)
 
-      if(isInCart(item.id)){
-      setCartList(cartList.map((cartItem)=>{
-      return {...cartItem,cantidad:cartItem.cantidad+cantidad}
-      })
-      );
-      }else{
-          setCartList([
-              ...cartList,{
-              id:item.id,
-              name:item.name,
-              pictureUrl:item.pictureUrl,
-              price:item.price,
-              cantidad:cantidad,
-              description:item.description
-          }]);
-      }
-  };
-  const removeItem=(id)=>{
-  setCartList(cartList.filter((item)=>item.id!==id));
-  };
-  const isInCart=(id)=>{
-  return cartList.find((cartItem)=>cartItem.id===parseInt(id))
-  };
-  const clear=()=>{
-  setCartList([]);
-  };
-
+    if( encontrado ===undefined){
+        setCartList([
+            ...cartList,{
+            id:item.id,
+            title:item.title,
+            pictureUrl:item.pictureUrl,
+            price:item.price,
+            cantidadItems:cantidad
+        }]);
+    }else{
+        encontrado.cantidadItems+=cantidad;
+    }
+};
+const removeItem=(id)=>{
+setCartList(cartList.filter((cartItem)=>cartItem.id!==id));
+let encontrado =cartList.find((cartItem)=>cartItem.id===id)
+setTotalI(totalI-encontrado.cantidadItems);
+};
+const isInCart=(id)=>{
+return cartList.find((cartItem)=>cartItem.id===id)
+};
+const clear=()=>{
+setCartList([]);
+setTotalI(0);
+};
+const calcularCantidadItems=(valor)=>{
+    setTotalI(totalI+valor);
+  }
+  const totalCost=cartList.map(elem => elem.price*elem.cantidadItems);  
   return (
-    <CarritoContext.Provider value={{cartList,addToCart,removeItem,isInCart,clear}}>
+    <CarritoContext.Provider value={{cartList,addToCart,removeItem,isInCart,clear,calcularCantidadItems,totalI,totalCost,setTotalI}}>
         {children}
     </CarritoContext.Provider>
   )

@@ -13,6 +13,7 @@ const ItemDetail = ({ item }) => {
         alert("Se agregaron "+ " " + cantidad + item.name + " " + "al carrito.");
         setItemCount(cantidad);
         carrito.addToCart(item,cantidad);
+        carrito.calcularCantidadItems(cantidad)
     } 
     return (
         <>
@@ -27,8 +28,8 @@ const ItemDetail = ({ item }) => {
                             <div className="d-flex justify-content-center align-items-center">
                                 {
                                     itemCount === 0
-                                        ? <ItemCount stock={item.stock} initial={itemCount} item={item} onAdd={onAdd} />
-                                        : <Link to='/cart' style={{ textDecoration: "none" }}><button className="btn btn-light" type="button">Checkear compra</button></Link>
+                                        ? <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
+                                        : <Link to='/cart' ><button className="btn btn-light" type="button">Checkear compra</button></Link>
                                        
                                 }
                             </div>
