@@ -3,24 +3,26 @@ import Item from "./Item"
 import Loader from './Loader';
 
 const ItemList = ({items}) =>{
+
+    console.log(items);
     return(
         <>
         {
             items.length > 0
             ? items.map(item =>
-        <Item 
-        key={item.id}
-        id={item.id}
-        name={item.name}
-        description={item.description}
-        idCategory={item.idCategory}
-        id={item.id}
-        pictureUrl={item.pictureUrl}
-        price={item.price}
-        stock={item.stock}/>) 
-        :<p><Loader/></p>
-        }
+                <Item 
+                key={item.id}
+                id={item.id}
+                name={item.nombre}
+                description={item.descripcion}
+                idCategory={item.idCategory}
+                pictureUrl={item.imagen}
+                price={item.precio}
+                stock={item.stock}/>) 
+                :<p><Loader/></p>
+            }
         </>
     );
-    }
+    
+}
     export default ItemList;
