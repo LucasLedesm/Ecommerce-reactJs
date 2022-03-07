@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom';
+import useFireStore from '../hooks/useFireStore';
+import Loader from './Loader';
 
-const { elements } = require("./producto");
+
 
 const ItemDetailContainer =()=>{
-    const [item,setItem]=useState({});
-    const {idItem}=useParams();
-    const customFetch=(elements,timeout)=>{
-        return new Promise((res)=>
-              setTimeout(()=>{
-                   res(elements)
-              },timeout)
-        );
-    }
-        useEffect(()=>{
-                customFetch(elements.find(item=>item.id===parseInt(idItem)),2000)
-                .then(result=>setItem(result))
-                .catch(error=>console.log(error))
-        },[idItem]);
+
+    const {id} = useParams();
+    const {individual, load, getIndividualData} = useFireStore();
+
+    useEffect(() => {
+        getIndividualData({id})
     
-        return(
-         <ItemDetail item={item}/>
-        );
+      return () => {
+        
+      }
+    }, [])
+    
+       
+        return <>
+         {load ? <Loader/> : <ItemDetail item={individual}/>}
+        </>;
     }
 export default ItemDetailContainer;

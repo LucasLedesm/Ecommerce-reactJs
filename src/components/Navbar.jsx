@@ -1,8 +1,9 @@
 import React from 'react';
 import CartWidget from './CartWidget';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function Navbar() {
+  const {idCategory} = useParams()
   return <div >
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -23,10 +24,10 @@ function Navbar() {
                 Items
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li> <Link to='/category/1' className="dropdown-item">Swords </Link> </li>
-                <li> <Link to={"/category/2"} className="dropdown-item" >Axes </Link> </li>
-                <li> <Link to={"/category/3"} className="dropdown-item" >Maces </Link> </li>
-                <li> <Link to={"/category/4"} className="dropdown-item">Spears </Link> </li>
+                <li> <Link to={"/category/sword"} className="dropdown-item">Swords </Link> </li>
+                <li> <Link to={"/category/axe"} className="dropdown-item" >Axes </Link> </li>
+                <li> <Link to={"/category/mace"} className="dropdown-item" >Maces </Link> </li>
+                <li> <Link to={"/category/spear"} className="dropdown-item">Spears </Link> </li>
               </ul>
             </li>
             <li className="nav-item">

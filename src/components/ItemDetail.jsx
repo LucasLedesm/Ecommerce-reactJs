@@ -10,7 +10,7 @@ const ItemDetail = ({ item }) => {
 
     
     const onAdd=(cantidad)=>{
-        alert("Se agregaron "+ " " + cantidad + item.name + " " + "al carrito.");
+        alert("Se agregaron "+ " " + cantidad + item.nombre + " " + "al carrito.");
         setItemCount(cantidad);
         carrito.addToCart(item,cantidad);
         carrito.calcularCantidadItems(cantidad)
@@ -20,11 +20,11 @@ const ItemDetail = ({ item }) => {
             <div className="container d-flex">
                 <div className="col-md-10">
                     <div className="card shadow-sm text-white bg-dark border-info align-items-center">
-                        <h1>{item.name}</h1>
-                        <img src={item.pictureUrl} alt="ilustracion" style={{ width: '100px', height: '100px' }} />
+                        <h1>{item.nombre}</h1>
+                        <img src={item.imagen} alt="ilustracion" style={{ width: '100px', height: '100px' }} />
                         <div className="card-body">
-                            <h3>${item.price}</h3>
-                            <p style={{ height: '100px' }} className="card-text"><strong>Equipable para:</strong>  {item.description}</p>
+                            <h3>${item.precio}</h3>
+                            <p style={{ height: '100px' }} className="card-text"><strong>Equipable para:</strong>  {item.descripcion}</p>
                             <div className="d-flex justify-content-center align-items-center">
                                 {
                                     itemCount === 0
