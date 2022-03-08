@@ -2,18 +2,29 @@ import ItemList from './ItemList';
 import React, { useEffect } from 'react'
 import useFireStore from '../hooks/useFireStore';
 import Loader from './Loader';
+import { useParams } from 'react-router-dom';
+
 
 
 
 const ItemListContainer = () => {
 
-    const {items, load, getData } = useFireStore()
+    const {idCategory} = useParams()
+    
+
+    const {items, load, getData, getDataCategory } = useFireStore()
 
     useEffect(() => {
 
-        getData();
+        if(idCategory){
+            getDataCategory(idCategory)
+        }else{
+            getData();
+        }
+
+        console.log("itemsFilt",items)
         
-    }, []);
+    }, [idCategory]);
 
     console.log(items)
 

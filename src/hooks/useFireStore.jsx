@@ -57,10 +57,39 @@ const useFireStore = () => {
         }
     }
 
+    const getDataCategory = async (idCategory) => {
+
+        setLoad(true)
+        
+        try {
+        
+        const data = collection(db, "items")
+        
+        const col = await getDocs(data)
+        
+        const resultaux = col.docs.map((doc) => doc = { id: doc.id, ...doc.data() })
+        
+        const result = resultaux.filter((item) => item.idCategory===idCategory)
+        
+        setItems(result)
+        
+        setLoad(false)
+        
+        } catch (error) {
+        
+        console.log(error);
+        
+        setLoad(false)
+        
+        }
+        
+        };
+
     return {
         getIndividualData,
         getData,
         generateOrder,
+        getDataCategory,
         items,
         load,
         individual
