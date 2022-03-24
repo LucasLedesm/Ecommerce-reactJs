@@ -54,10 +54,6 @@ const useFireStore = () => {
             setLoad(false)
             console.log(order.id)
             setidOrder(order.id)
-           
-            //  datos.items.map((e) => {
-            //     updatingStock(e.id, e.stock -e.cantidad)
-            // })
             
         } catch (error) {
             console.log(error);
@@ -93,6 +89,17 @@ const useFireStore = () => {
         
         };
 
+        const actualStock = async (items) => {
+            items.forEach((elment) => {
+              const orderComp = doc(db, "items", elment.id);
+              try {
+                updateDoc(orderComp, { onStock: elment.Stock - elment.cantidad });
+              } catch (error) {
+                console.log(error);
+              }
+            });
+          };
+
         
 
     return {
@@ -100,6 +107,7 @@ const useFireStore = () => {
         getData,
         generateOrder,
         getDataCategory,
+        actualStock,
         idOrder,
         items,
         load,
