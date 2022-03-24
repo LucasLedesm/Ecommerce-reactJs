@@ -8,7 +8,7 @@ Proyecto hecho en el curso de [FrontEnd ReactJS](https://www.coderhouse.com/onli
 
 ## Dependencias extras
 
-- **Material UI**: Provee una robusta, personalizable y accesible librería de componentes avanzados, habilitando su desarrollo de diseño necesario para aplicaciones con ReactJS.
+- **Bootstrap**: Provee una robusta, personalizable y accesible librería de componentes avanzados, habilitando su desarrollo de diseño necesario para aplicaciones con ReactJS.
 - **Firebase**: Plataforma móvil de Google que te ayuda a desarrollar apps de alta calidad con rapidez sin preocuparnos de tener un BackEnd.
 - **React Router DOM**: Usado para el sistema de navegación entre páginas para que funcione como una SPA.
 
