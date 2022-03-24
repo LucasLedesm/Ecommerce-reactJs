@@ -11,6 +11,9 @@ const useFireStore = () => {
 
     const [individual, setIndividual] = useState({})
 
+    const [idOrder, setidOrder] = useState()
+
+
     const getData = async () => {
         setLoad(true)
         try {
@@ -49,7 +52,12 @@ const useFireStore = () => {
             const col = collection(db, "orders");
             const order = await addDoc(col, datos)
             setLoad(false)
-            alert(order.id)
+            console.log(order.id)
+            setidOrder(order.id)
+           
+            //  datos.items.map((e) => {
+            //     updatingStock(e.id, e.stock -e.cantidad)
+            // })
             
         } catch (error) {
             console.log(error);
@@ -85,11 +93,14 @@ const useFireStore = () => {
         
         };
 
+        
+
     return {
         getIndividualData,
         getData,
         generateOrder,
         getDataCategory,
+        idOrder,
         items,
         load,
         individual

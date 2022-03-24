@@ -7,11 +7,7 @@ import Checkout from './Checkout';
 
 
 const Cart = () => {
-  const { removeItem, totalCost } = useContext(CarritoContext);
-  const carrito = useContext(CarritoContext);
-
-
-
+  
   return (
 
     <div classNameName="container d-flex card bg-dark border-info">

@@ -17,9 +17,12 @@ const ItemDetail = ({ item }) => {
     } 
     return (
         <>
-            <div className="container d-flex">
+            <div className="container d-flex pt-4 mt-4">
                 <div className="col-md-10">
                     <div className="card shadow-sm text-white bg-dark border-info align-items-center">
+                        <div className=' col-md-10 d-flex justify-content-start pt-4'>
+                             <Link to="/"><button className="btn btn-warning" type="button">Volver</button></Link>
+                        </div>
                         <h1>{item.nombre}</h1>
                         <img src={item.imagen} alt="ilustracion" style={{ width: '100px', height: '100px' }} />
                         <div className="card-body">
@@ -33,7 +36,6 @@ const ItemDetail = ({ item }) => {
                                        
                                 }
                             </div>
-                                <Link to="/"><button className="btn btn-light" type="button">Volver al inicio</button></Link>
                         </div>
                     </div>
                 </div>

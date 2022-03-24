@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 import Cart from "../components/Cart"
 import CarritoProvedor from '../context/CarritoProvedor'
 import Loader from '../components/Loader'
+import Order from '../components/Order'
 
 
 
@@ -20,6 +21,8 @@ const Rutas = () => {
                     <Route path="/Category/:idCategory" element={<ItemListContainer />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path='/Load' element={<Loader/>} />
+                    <Route path='/Order' element={<Order/>} />
+
                 </Routes>
             </BrowserRouter>
         </CarritoProvedor>

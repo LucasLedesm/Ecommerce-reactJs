@@ -2,14 +2,13 @@ import React from 'react'
 import { useContext, useState } from 'react'
 import { CarritoContext } from '../context/CarritoProvedor';
 import useFireStore from '../hooks/useFireStore';   
+import Order from './Order';
 
 
 const Checkout = () => {
 
     const { totalCost } = useContext(CarritoContext);
     const carrito = useContext(CarritoContext);
-    console.log(totalCost);
-
     const [form, setForm] = useState({
 
 
@@ -23,7 +22,7 @@ const Checkout = () => {
         items: carrito.cartList,
         total: { totalCost }
     })
-    const { generateOrder } = useFireStore();
+    const { generateOrder, idOrder } = useFireStore();
 
     const handleChange = (e) => {
         setForm({
@@ -41,11 +40,11 @@ const Checkout = () => {
 
     }
 
+
     return (
-        <form onSubmit={handleSubmit}>
+        <>
+         <form onSubmit={handleSubmit}>
             <h3>Formulario de Compra</h3>
-
-
             <div className="mb-3">
                 <label className="form-label">Nombre</label>
                 <input onChange={handleChange} name= "name" value={form.buyer.name} type="text" className="form-control" />
@@ -67,9 +66,16 @@ const Checkout = () => {
                 <div className="form-text">Ingrese un celular</div>
             </div>
            
-            <button disabled ={!form.buyer.name|| !form.buyer.lastName || !form.buyer.email || !form.buyer.phone} type="submit" className="btn btn-primary w-100">Finalizar compra</button>
+            <button disabled ={!form.buyer.name|| !form.buyer.lastName || !form.buyer.email || !form.buyer.phone || totalCost.length === 0} onClick={carrito.clear} type="submit" className="btn btn-primary w-100">Finalizar compra</button>
         </form>
-    )
+
+        { idOrder === undefined ? console.log("undefined") : <Order Orden ={idOrder}/>}
+        
+        </>
+       
+
+)
 }
+
 
 export default Checkout

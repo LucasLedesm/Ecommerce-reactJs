@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react'
 
 
+
 export const CarritoContext = createContext();
 
 
@@ -39,6 +40,7 @@ const CarritoProvedor = ({ children }) => {
   const calcularCantidadItems = (valor) => {
     setTotalI(totalI + valor);
   }
+
   const totalCost = cartList.map(elem => elem.price * elem.cantidadItems);
   return (
     <CarritoContext.Provider value={{ cartList, addToCart, removeItem, isInCart, clear, calcularCantidadItems, totalI, totalCost, setTotalI }}>

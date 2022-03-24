@@ -22,11 +22,11 @@ const ItemListContainer = () => {
             getData();
         }
 
-        console.log("itemsFilt",items)
+
         
     }, [idCategory]);
 
-    console.log(items)
+    
 
     return (
         <>
