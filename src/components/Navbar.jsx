@@ -7,7 +7,7 @@ function Navbar() {
   return <div >
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <Link to={"/"} className="navbar-brand" >Marketplace</Link>
+        <Link to={"/"} className="navbar-brand" ><i className="bi bi-bug-fill"></i>Marketplace</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
