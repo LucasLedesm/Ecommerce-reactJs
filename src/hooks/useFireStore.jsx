@@ -52,7 +52,6 @@ const useFireStore = () => {
             const col = collection(db, "orders");
             const order = await addDoc(col, datos)
             setLoad(false)
-            console.log(order.id)
             setidOrder(order.id)
             
         } catch (error) {

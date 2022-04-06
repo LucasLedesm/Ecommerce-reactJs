@@ -7,7 +7,7 @@ const Item = (props) => {
 
     return (
         <div className="container d-flex">
-            <div className="col-md-10">
+            <div className="col-md-10 w-100">
                 <div className="card shadow-sm text-white bg-dark border-info align-items-center">
                     <h1>{props.name}</h1>
                     <img src={props.pictureUrl} alt="ilustracion" style={{ width: '100px', height: '100px' }} />

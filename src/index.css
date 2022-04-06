@@ -26,3 +26,12 @@ body {
   margin-right: 0 !important;
   border-radius: 12% !important;
 }
+#boton {
+  display: none !important;
+}
+
+.modal {
+  color: black !important;
+  background-color: rgba(0, 0, 0, 0.534) !important;
+  background: blur(0.5px) !important;
+}

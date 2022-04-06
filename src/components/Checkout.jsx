@@ -1,5 +1,6 @@
 import React from 'react'
 import { useContext, useState } from 'react'
+import { Link } from 'react-router-dom';
 import { CarritoContext } from '../context/CarritoProvedor';
 import useFireStore from '../hooks/useFireStore';
 import Order from './Order';
@@ -37,9 +38,10 @@ const Checkout = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         generateOrder({ datos: form })
+        
     }
 
-
+    
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -65,10 +67,12 @@ const Checkout = () => {
                     <div className="form-text">Ingrese un celular</div>
                 </div>
 
-                <button disabled={!form.buyer.name || !form.buyer.lastName || !form.buyer.email || !form.buyer.phone || totalCost.length === 0} onClick={carrito.clear} type="submit" className="btn btn-primary w-100">Finalizar compra</button>
+                <button disabled={!form.buyer.name || !form.buyer.lastName || !form.buyer.email || !form.buyer.phone || totalCost.length === 0 } onClick={ generateOrder()} data-bs-toggle="modal" data-bs-target="#staticBackdrop"  type="submit" className="btn btn-primary w-100">Generar Orden</button>
+                 <Link to={"/"} id="boton" onClick ={carrito.clear} className='btn btn-success w-100 mt-2' >Finalizar compra</Link>
             </form>
 
-            {idOrder === undefined ? console.log("undefined") : <Order Orden={idOrder} />}
+            {idOrder === undefined ? console.log("undefined") : <Order Orden={idOrder}/> } 
+            
 
         </>
 
